@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Traductor de Idiomas</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container mt-5">
+  <div class="card">
+    <h5 class="card-header">Traductor de Español a Idiomas Mayas</h5>
+    <div class="card-body">
+        <div class="form-group">
+            <label for="language-select">Selecciona el idioma a traducir:</label>
+            <select id="language-select" class="form-control">
+              <option value="kiche">K'iche' (Quiché)</option>
+              <option value="qeqchi">Q'eqchi' (Kekchí)</option>
+              <option value="kaqchikel">Kaqchikel (Cakchiquel)</option>
+              <option value="mam">Mam (mam)</option>
+            </select>
+          </div>
+      <div class="form-group">
+        <label for="spanish-input">Texto en Español:</label>
+        <textarea id="spanish-input" class="form-control" rows="4"></textarea>
+      </div>
+      
+      <button id="translate-btn" class="btn btn-primary">Traducir</button>
+      <div class="form-group">
+        <label for="spanish-input">Resultado:</label>
+        <textarea id="spanish-input" class="form-control" rows="4"></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById('translate-btn').addEventListener('click', function() {
+  var spanishText = document.getElementById('spanish-input').value;
+  var selectedLanguage = document.getElementById('language-select').value;
+  var translatedText = translateToMayan(spanishText, selectedLanguage);
+  document.getElementById('mayan-output').innerText = translatedText;
+});
+
+function translateToMayan(text, language) {
+  // Aquí deberías implementar la lógica de traducción real a partir del español al idioma maya seleccionado
+  // Por ahora, simplemente devolveremos el mismo texto
+  return text;
+}
+</script>
+
+</body>
+</html>
